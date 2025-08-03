@@ -3,7 +3,9 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM ghcr.io/ublue-os/kinoite-main:latest
+# FROM ghcr.io/ublue-os/kinoite-main:latest
+
+FROM quay.io/almalinuxorg/atomic-desktop-kde
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
