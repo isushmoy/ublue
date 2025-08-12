@@ -33,7 +33,7 @@ set -ouex pipefail
 
 systemctl enable podman.socket
 
-cd /var/tmp/build_scripts
+cd /var/tmp/build_files
 for script in ./*.sh; do
 	if [ "${script}" == "./build.sh" ]; then
 		continue
