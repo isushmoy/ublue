@@ -5,7 +5,7 @@ COPY build_files /
 # Base Image
 # FROM ghcr.io/ublue-os/kinoite-main:latest
 
-FROM https://quay.io/centos-bootc/centos-bootc:stream10
+FROM quay.io/centos-bootc/centos-bootc:stream10
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
