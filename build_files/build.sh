@@ -2,17 +2,6 @@
 
 set -ouex pipefail
 
-# Desktop
-# set -xeu
-
-dnf install -y --nobest \
-	@"KDE Plasma Workspaces" \
-	falkon \
- 	plasma-browser-integration
-
-systemctl enable \
-	sddm.service
-
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
