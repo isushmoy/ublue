@@ -43,3 +43,14 @@ systemctl enable \
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+
+cd /var/tmp/build_scripts
+for script in ./*.sh; do
+	if [ "${script}" == "./build.sh" ]; then
+		continue
+	fi
+	cd /var/tmp/build_scripts
+	printf "::group:: ===RUNNING ${script}===\n"
+	${script} || (printf "Failed to run ${script}\n" && ls -lah && exit 1)
+	printf "::endgroup::\n"
+done
