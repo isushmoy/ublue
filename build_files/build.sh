@@ -33,12 +33,12 @@ set -ouex pipefail
 
 systemctl enable podman.socket
 
-cd /build_files
+cd /ctx/build_files
 for script in ./*.sh; do
 	if [ "${script}" == "./build.sh" ]; then
 		continue
 	fi
-	cd /build_files
+	cd /ctx/build_files
 	printf "::group:: ===RUNNING ${script}===\n"
 	${script} || (printf "Failed to run ${script}\n" && ls -lah && exit 1)
 	printf "::endgroup::\n"
