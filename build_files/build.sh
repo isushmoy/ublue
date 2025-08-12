@@ -38,7 +38,7 @@ for script in ./*.sh; do
 	if [ "${script}" == "./build.sh" ]; then
 		continue
 	fi
-	cd /var/tmp/build_scripts
+	cd /var/tmp/build_files
 	printf "::group:: ===RUNNING ${script}===\n"
 	${script} || (printf "Failed to run ${script}\n" && ls -lah && exit 1)
 	printf "::endgroup::\n"
